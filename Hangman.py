@@ -5,6 +5,9 @@ from art import logo
 # Function checks if letter chosen by player occurs in guessed word. If letter occurs, then function inserts the letter in appropriate positions in blanks(guessed)
 # and returns True(letter occured) and updates guessed, if the letter doesn't occure, fucntion returns False(not occured) and blanks(guessed) without update.
 def check_letter_occurence(word: str, letter: str, guessed: str):
+    """Function checks if letter occures in word. Based on this condition it returns True and updated blanks with guessed letters if letter occures
+    or False and not updated blanks."""
+
     num_occ = word.count(letter)
     new_guessed = list(guessed)
 
@@ -23,6 +26,7 @@ def check_letter_occurence(word: str, letter: str, guessed: str):
 # Function checks if drwan word is same as guessed word by comparison strings that contains both.
 # If strings are the same, function returns True, else it returns False.
 def check_if_player_won(word: str, guessed: str):
+    """Function returns True if condition for player to win is met or False if condition is not met."""
 
     if word == guessed:
         return True
@@ -33,6 +37,7 @@ def check_if_player_won(word: str, guessed: str):
 # Function chceck if chosen letter was already chosen and its position is discovered. Function can be also used to see if player alredy chosen letter and it was alredy said it doesn't occur in guessed word.
 # If chosen letter is in string that contains blanks and discovered letters that means it was already chosen, so function returns True, else it returns False.
 def was_letter_alredy_chosen(letter: str, guessed: str):
+    """Function returns True if letter occures in blanks with guessed letters or False if letter doesn't occure."""
     num_occ = guessed.count(letter)
 
     if num_occ > 0:
@@ -44,6 +49,7 @@ def was_letter_alredy_chosen(letter: str, guessed: str):
 # Function that allows user to paly game, comumnicates with user, stores variables and main loop
 # stages is list of ASCI arts of stages of game, if help value is True it shows player the word(mainly used for debugging)
 def hangman_game(stages: list, help: bool = False):
+    """Functions allows user to play Hangman Game using terminal."""
     
     # variables
     lifes = 6

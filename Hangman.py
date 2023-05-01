@@ -1,5 +1,6 @@
 from random_word import RandomWords
 from os import system as sys
+from art import logo
 
 # Function checks if letter chosen by player occurs in guessed word. If letter occurs, then function inserts the letter in appropriate positions in blanks(guessed)
 # and returns True(letter occured) and updates guessed, if the letter doesn't occure, fucntion returns False(not occured) and blanks(guessed) without update.
@@ -55,6 +56,7 @@ def hangman_game(stages: list, help: bool = False):
     game_won = False
 
     # commmunication with player
+    print(logo)
     print("GAME STARTED!")
     if help is True:
         print(f"Psst... The word is {r_word}.")
